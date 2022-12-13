@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\VoteRequest;
 use App\Models\Vote;
+use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    public function vote(VoteRequest $request) {
-        $validated = $request->validated();
+    public function vote(Request $request) {
 
         Vote::create([
-            'image_id' => $validated['image_id'],
-            'vote' => $validated['vote'],
-            'token' => $validated['token']
+            'image_id' => $request['image_id'],
+            'mssv' => $request['mssv'],
+            'vote' => $request['vote']
         ]);
-
-        return redirect()->route('welcome');
+        return redirect()->route('home.show', ['mssv' => $request['mssv']]);
     }
 }

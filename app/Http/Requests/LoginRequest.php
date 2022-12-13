@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class VoteRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,21 +24,14 @@ class VoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'vote' => 'required',
-            'image_id' => 'required',
-            'token' => 'required'
+            'mssv' => 'required|digits:8',
         ];
     }
 
-    /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
-     */
     public function messages(): array
     {
         return [
-            'vote.required' => 'A vote is required',
+            'mssv' => 'Nhập mã số sinh viên',
         ];
     }
 }

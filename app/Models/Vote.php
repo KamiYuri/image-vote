@@ -16,7 +16,7 @@ class Vote extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['token', 'image_id', 'vote'];
+    protected $fillable = ['mssv', 'image_id', 'vote'];
 
     /**
      * @return BelongsTo

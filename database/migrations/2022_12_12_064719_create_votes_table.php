@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->string('token');
+            $table->string('mssv', 8);
             $table->unsignedBigInteger('image_id');
             $table->foreign(['image_id'], 'vote__image___fk')->references(['id'])->on('images');
             $table->integer('vote');

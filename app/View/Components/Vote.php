@@ -16,17 +16,25 @@ class Vote extends Component
     /**
      * @var string
      */
-    public string $token;
+    public string $mssv;
+    /**
+     * @var int
+     */
+    public int $vote_count;
 
     /**
      * Create a new component instance.
      *
      */
-    public function __construct(string $token)
+    public function __construct(string $mssv, int $voteCount)
     {
-        $this->token = $token;
+        $this->mssv = $mssv;
+        $this->vote_count = $voteCount;
     }
 
+    /**
+     * @return int
+     */
     private function getRandomImageID(): int
     {
         $count = Image::all()->count();
