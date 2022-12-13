@@ -1,7 +1,8 @@
 <div class="w-full flex justify-center relative">
-    <div class="absolute inset-0 mt-2 ml-2 flex flex-col">
-        <h1>MSSV: <span class="font-bold">{{ $mssv }}</span> </h1>
+    <div class="absolute top-0 right-0 mt-5 mr-5 flex flex-col items-end">
+        <h1>MSSV <span class="font-bold">{{ $mssv }}</span> </h1>
         <h1>Đã đánh giá <span class="font-bold">{{ $vote_count }} </span>lần</h1>
+        <a href="{{ route('welcome') }}" class="w-11"><span class="underline italic">Thoát</span></a>
     </div>
 
     <h1 class="font-bold text-4xl mt-5">Đánh giá chất lượng ảnh</h1>
