@@ -9,12 +9,20 @@
 </div>
 
 <div class="w-full grid grid-cols-3 px-10 gap-5">
-    <div class="flex justify-center items-end">
-        <h1 class="text-2xl font-bold">
+    <div class="flex flex-col justify-center">
+        <span class="text-xl">Ảnh cần được đánh giá theo thang điểm từ <span class="font-bold">1</span> đến <span class="font-bold">5</span>.</span>
+        <ol>
+            <li>1: Chất lượng rất kém</li>
+            <li>2: Chất lượng kém</li>
+            <li>3: Chất lượng trung bình</li>
+            <li>4: Chất lượng tốt</li>
+            <li>5: Chất lượng rất tốt</li>
+        </ol>
+        <span class="self-center text-2xl font-bold">
             Ví dụ
-        </h1>
+        </span>
     </div>
-    <div class="col-span-2 flex flex-col items-center space-y-2">
+    <div class="col-span-2 flex flex-col items-center justify-end space-y-2">
         <h1 class="text-2xl font-bold">
             Lựa chọn chất lượng ảnh
         </h1>
@@ -66,12 +74,13 @@
         </div>
     </div>
 
-{{--    Sample--}}
+    {{--    Sample--}}
     <div class="order-3 grid gap-2 grid-cols-2 items-center w-auto">
-        <div class="space-y-1 relative w-auto">
+        <div class="space-y-1 relative">
             <span class="absolute bottom-0 right-0 bg-red-700 text-white text-sm font-bold px-3 py-0.5 rounded">1</span>
             <img class="object-contain object-right-bottom h-[200px]" src="{{ asset('storage/sample/1.jpg') }}" alt="image">
         </div>
+
         <div class="space-y-1 relative w-auto">
             <span class="absolute bottom-0 right-0 bg-orange-600 text-white text-sm font-bold px-3 py-0.5 rounded">2</span>
             <img class=" object-contain object-right-bottom h-[200px]" src="{{ asset('storage/sample/2.jpg') }}" alt="image">
@@ -91,6 +100,6 @@
     </div>
 
     <div class="col-span-2 order-4 flex flex-col items-center">
-        <img class="object-contain object-top h-[632px] " src="{{ asset('storage/' . \App\Models\Image::find($image_id)->name) }}" alt="image">
+        <img class="object-contain object-top h-[632px] " src="{{ asset('storage/img/' . \App\Models\Image::find($image_id)->name) }}" alt="image">
     </div>
 </div>

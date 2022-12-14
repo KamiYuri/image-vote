@@ -17,7 +17,9 @@ class ImageSeeder extends Seeder
      */
     public function run(): void
     {
-        $files = Storage::disk('public')->files();
+        $files = array_map(function (string $str) {
+            return str_replace('public/img/', "", $str);
+        }, Storage::files('public/img'));
 
         foreach ($files as $file) {
             DB::table('images')->insert([
