@@ -1,8 +1,13 @@
 <div class="w-full flex justify-center relative">
-    <div class="absolute top-0 right-0 mt-5 mr-5 flex flex-col items-end">
+    <div class="w-full absolute top-0 right-0 mt-5 mr-5 flex flex-col items-end">
         <h1>MSSV <span class="font-bold">{{ $mssv }}</span> </h1>
-        <h1>Đã đánh giá <span class="font-bold">{{ $vote_count }} </span>lần</h1>
         <a href="{{ route('welcome') }}" class="w-11"><span class="underline italic">Thoát</span></a>
+        <br>
+        <h1>Đã đánh giá <span class="font-bold">{{ $vote_count }}/50 </span>lần.</h1>
+        @if($vote_count >= 50)
+            <h1 class="">Cảm ơn các bạn đã đóng góp cho sự nghiệp nghiên cứu khoa học.</h1>
+            <h1>  Các bạn có thể tiếp tự đánh giá ảnh nếu muốn.</h1>
+        @endif
     </div>
 
     <h1 class="font-bold text-4xl mt-5">Đánh giá chất lượng ảnh</h1>
